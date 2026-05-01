@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Mert Samet Kayacıoğlu</title>
+  <style>
+    body {
+      background: white;
+      color: black;
+      font-family: "Times New Roman", serif;
+      text-align: center;
+      margin: 0;
+      padding-top: 220px;
+    }
+
+    h1 {
+      font-size: 44px;
+      font-style: italic;
+      margin-bottom: 25px;
+    }
+
+    img {
+      width: 580px;
+      max-width: 90%;
+      height: auto;
+    }
+
+    .info {
+      margin-top: 15px;
+      font-size: 16px;
+      font-style: italic;
+    }
+
+    nav {
+      margin-top: 12px;
+      font-size: 15px;
+    }
+
+    a {
+      color: blue;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Mert Samet Kayacıoğlu</h1>
+
+  <img src="img/main_image.jpg" alt="Ana görsel">
+
+  <div class="info">
+    TIME IN ISTANBUL — <span id="time"></span>
+  </div>
+
+  <nav>
+    <a href="about.html">about</a> //
+    <a href="faq.html">faq</a> //
+    <a href="blog.html">blog</a> //
+    <a href="resume.html">resume</a> //
+    <a href="contact.html">contact</a>
+  </nav>
+
+  <script>
+    function updateTime() {
+      const now = new Date();
+      const time = now.toLocaleTimeString("en-US", {
+        timeZone: "Europe/Istanbul",
+        hour: "numeric",
+        minute: "2-digit",
+        second: "2-digit"
+      });
+      document.getElementById("time").textContent = time + " GMT+3";
+    }
+
+    updateTime();
+    setInterval(updateTime, 1000);
+  </script>
+
+</body>
+</html>
