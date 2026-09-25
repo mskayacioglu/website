@@ -49,7 +49,7 @@
   <img src="img/main_image.jpg" alt="Ana görsel">
 
   <div class="info">
-    TIME IN ISTANBUL — <span id="time"></span>
+    DATE &amp; TIME IN PARIS — <span id="time"></span>
   </div>
 
   <nav>
@@ -63,13 +63,17 @@
   <script>
     function updateTime() {
       const now = new Date();
-      const time = now.toLocaleTimeString("en-US", {
-        timeZone: "Europe/Istanbul",
+      const time = now.toLocaleString("en-US", {
+        timeZone: "Europe/Paris",
+        year: "numeric",
+        month: "short",
+        day: "numeric",
         hour: "numeric",
         minute: "2-digit",
-        second: "2-digit"
+        second: "2-digit",
+        timeZoneName: "shortOffset"
       });
-      document.getElementById("time").textContent = time + " GMT+3";
+      document.getElementById("time").textContent = time;
     }
 
     updateTime();
